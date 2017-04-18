@@ -26,10 +26,13 @@ my.wheelmi <- my.wheelmi$id[my.wheelmi$hwy == min(my.wheelmi$hwy)]
 
 # Write a function that takes a `year` and a `make` as parameters, and returns 
 # The vehicle that gets the most hwy miles/gallon of vehicles of that make in that year
-my.function <- function(my.year, my.make) {
-  my.ans <- my.data(my.data$year == my.year & my.data$make == my.make & max(hwy))
+my.eff <- function(my.year, my.make) {
+  my.in <- my.data[my.data$year == my.year & my.data$make == my.make,]
+  my.ans <- my.in[my.in$hwy == max(my.in$hw
+                                   y),]
+  return(my.ans)
 }
 
 # What was the most efficient honda model of 1995?
-
+my.test <- my.eff('1995','honda')
 
